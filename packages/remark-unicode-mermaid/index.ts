@@ -16,6 +16,11 @@ function preprocess(source: string): string {
     .replace(/(participant|actor)\s+([\w-]+)\s+as\s+[^\n]+/gi, "$1 $2");
 }
 
+function stripAnsi(source: string): string {
+  const escape = String.fromCharCode(27);
+  return source.replace(new RegExp(`${escape}(?:[@-Z\\\\-_]|\\[[0-?]*[ -/]*[@-~])`, "g"), "");
+}
+
 const remarkUnicodeMermaid: Plugin<[RemarkUnicodeMermaidOptions?], Root> = (options = {}) => {
   const render = options.render ?? renderMermaidASCII;
 
@@ -29,7 +34,7 @@ const remarkUnicodeMermaid: Plugin<[RemarkUnicodeMermaidOptions?], Root> = (opti
       tasks.push(
         (async () => {
           try {
-            node.value = await render(preprocess(original));
+            node.value = stripAnsi(await render(preprocess(original)));
             node.lang = "raw";
             node.meta = null;
           } catch {
