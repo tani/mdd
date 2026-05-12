@@ -1,4 +1,4 @@
-import { renderMermaidAscii } from "beautiful-mermaid";
+import { renderMermaidASCII } from "beautiful-mermaid";
 import type { Code, Root } from "mdast";
 import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
@@ -17,7 +17,7 @@ function preprocess(source: string): string {
 }
 
 const remarkUnicodeMermaid: Plugin<[RemarkUnicodeMermaidOptions?], Root> = (options = {}) => {
-  const render = options.render ?? renderMermaidAscii;
+  const render = options.render ?? renderMermaidASCII;
 
   return async (tree) => {
     const tasks: Promise<void>[] = [];

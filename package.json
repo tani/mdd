@@ -17,14 +17,14 @@
     "@rat/markdown-unicode": "workspace:*"
   },
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
+    "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
     "@types/mdast": "^4.0.4",
     "@types/unist": "^3.0.3",
-    "eslint": "^9.20.1",
+    "eslint": "^10.3.0",
     "eslint-plugin-no-type-assertion": "^1.3.0",
-    "oxfmt": "^0.32.0",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.24.1"
+    "oxfmt": "^0.49.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.3"
   }
 }

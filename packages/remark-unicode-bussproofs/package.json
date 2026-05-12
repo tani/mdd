@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@rat/bussproofs-unicode": "workspace:*",
-    "arktype": "^2.1.29",
+    "arktype": "^2.2.0",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
